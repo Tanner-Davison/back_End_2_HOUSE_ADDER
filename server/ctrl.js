@@ -21,11 +21,12 @@ module.exports = {
         const {type} = req.body;
         const {id} = req.params;
         const index = houses.findIndex((h)=> h.id === +id)
-            if(type === 'plus'){
-                houses[index].price += 10000;
+
+        if(type === 'plus'){
+            houses[index].price += 10000;
             return res.status(200).send(houses)
-            }else if(type === 'minus'){
-                houses[index].price -= 10000;
+        }else if(type === 'minus'){
+            houses[index].price -= 10000;
             return res.status(200).send(houses)
         }
     },
